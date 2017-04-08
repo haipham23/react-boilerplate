@@ -4,11 +4,9 @@ import { connect } from 'react-redux';
 class Footer extends React.Component {
   render() {
     return (
-      <nav className="pt-navbar pt-transparent">
-        <div className="pt-navbar-group pt-align-right">
-          Copyright 2017 © Hai Pham
-        </div>
-      </nav>
+      <div>
+        Copyright 2017 © Hai Pham
+      </div>
     );
   }
 }
