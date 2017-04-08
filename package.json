@@ -31,6 +31,7 @@
     "compression": "1.6.2",
     "helmet": "3.5.0",
     "object-assign": "4.1.0",
+    "pre-commit": "1.2.2",
     "react": "15.4.1",
     "react-dom": "15.4.1",
     "react-grid-system": "2.7.0",
@@ -104,6 +105,10 @@
       "^.+\\.(gif|ttf|eot|svg|woff|woff2|ico)$": "<rootDir>/tools/fileMock.js"
     }
   },
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
   "babel": {
     "presets": [
       "react",
