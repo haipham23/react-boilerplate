@@ -1,18 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Container, Row, Col } from 'react-grid-system';
 
 class Home extends React.Component {
   render() {
     return (
       <div>
-        <Container>
-          <Row>
-            <Col xs={12}>
-              <h1>Page Title</h1>
-            </Col>
-          </Row>
-        </Container>
+        <h1>Page Title</h1>
       </div>
     );
   }

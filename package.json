@@ -34,7 +34,6 @@
     "prop-types": "15.6.2",
     "react": "16.4.1",
     "react-dom": "16.4.1",
-    "react-grid-system": "4.1.4",
     "react-redux": "5.0.7",
     "react-redux-i18n": "1.9.3",
     "react-router": "4.3.1",
@@ -64,6 +63,7 @@
     "connect-history-api-fallback": "1.5.0",
     "coveralls": "3.0.2",
     "enzyme": "3.3.0",
+    "enzyme-adapter-react-16": "1.1.1",
     "eslint": "5.1.0",
     "eslint-plugin-import": "2.13.0",
     "eslint-plugin-react": "7.10.0",
@@ -98,7 +98,10 @@
     "moduleNameMapper": {
       "\\.(css|scss)$": "identity-obj-proxy",
       "^.+\\.(gif|ttf|eot|svg|woff|woff2|ico)$": "<rootDir>/tools/fileMock.js"
-    }
+    },
+    "setupFiles": [
+      "<rootDir>/tools/enzyme.js"
+    ]
   },
   "pre-commit": [
     "lint",

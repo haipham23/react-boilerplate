@@ -7,7 +7,7 @@ import { TestProvider } from '../../utils/test.utils';
 
 import Footer from './Footer';
 
-describe('App component', () => {
+describe('Footer component', () => {
   it('should display', () => {
     const store = configuredMockStore()({});
     const wrapper = mount(

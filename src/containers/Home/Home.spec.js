@@ -7,7 +7,7 @@ import { TestProvider } from '../../utils/test.utils';
 
 import Home from './Home';
 
-describe('App component', () => {
+describe('Home component', () => {
   it('should display', () => {
     const store = configuredMockStore()({});
     const wrapper = mount(

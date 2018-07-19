@@ -7,7 +7,7 @@ import { TestProvider } from '../../utils/test.utils';
 
 import NotFound from './NotFound';
 
-describe('App component', () => {
+describe('NotFound component', () => {
   it('should display', () => {
     const store = configuredMockStore()({});
     const wrapper = mount(
