@@ -4,7 +4,7 @@ import compression from 'compression';
 import helmet from 'helmet';
 import logger from 'winston';
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8081;
 const app = express();
 
 app.use(helmet({

@@ -3,6 +3,7 @@
 import webpack from 'webpack';
 import WebpackMd5Hash from 'webpack-md5-hash';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import UglifyJSPlugin from 'uglifyjs-webpack-plugin';
 import path from 'path';
 
 const GLOBALS = {
@@ -22,6 +23,7 @@ export default {
     publicPath: '/',
     filename: '[name].[chunkhash].js'
   },
+  mode: 'production',
   plugins: [
     // Hash the files using MD5 so that their names change when the content changes.
     new WebpackMd5Hash(),
@@ -50,7 +52,9 @@ export default {
     }),
 
     // Minify JS
-    new webpack.optimize.UglifyJsPlugin({ sourceMap: true }),
+    new UglifyJSPlugin({
+      sourceMap: true
+    }),
 
     new webpack.LoaderOptionsPlugin({
       minimize: true,
@@ -59,7 +63,7 @@ export default {
       options: {
         context: '/'
       }
-    })
+    }),
   ],
   module: {
     rules: [
