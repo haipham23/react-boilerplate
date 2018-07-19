@@ -1,23 +1,34 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, browserHistory } from 'react-router';
-import { syncHistoryWithStore } from 'react-router-redux';
+import { ConnectedRouter } from 'react-router-redux';
+import { Route, Switch } from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory';
 
 import configureStore from './store/configureStore';
-import routes from './routes';
+import { INDEX } from './constants/routePaths';
 
-import './styles/index.scss';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import Home from './containers/Home/Home';
+import NotFound from './components/NotFound/NotFound';
 
 require('./favicon.ico');
 
-const store = configureStore();
-
-// Create an enhanced history that syncs navigation events with the store
-const history = syncHistoryWithStore(browserHistory, store);
+const history = createHistory();
+const store = configureStore({}, history);
 
 render(
   <Provider store={store}>
-    <Router history={history} routes={routes} />
+    <ConnectedRouter history={history}>
+      <div>
+        <Header />
+        <Switch>
+          <Route exact path={INDEX} component={Home} />
+          <Route component={NotFound} />
+        </Switch>
+        <Footer />
+      </div>
+    </ConnectedRouter>
   </Provider>, document.getElementById('react-app')
 );

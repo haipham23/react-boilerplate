@@ -5,7 +5,7 @@ import { Container, Row, Col } from 'react-grid-system';
 class Home extends React.Component {
   render() {
     return (
-      <div className="home">
+      <div>
         <Container>
           <Row>
             <Col xs={12}>
